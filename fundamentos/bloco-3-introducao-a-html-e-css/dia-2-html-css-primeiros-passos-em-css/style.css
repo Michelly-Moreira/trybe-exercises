@@ -1,0 +1,33 @@
+p {
+    font-weight: 600;
+    font-size: 3em;
+    font-style: italic;
+  }
+  h1 {
+    font-family: sans-serif;
+    font-size: 65px;
+    color: orange;
+    text-decoration: underline;
+  }
+
+  ul {
+    background-color: aquamarine;
+    line-height: 40px;
+  }
+
+  .yellow{
+    background-color: yellow;
+  }
+  .red{
+    background-color: red;
+  }
+  .brown{
+    background-color: brown;
+  }
+  .article {
+    background-color: blanchedalmond;
+  }
+  body {
+    font-size: 16px;
+    text-align: center;
+  }
