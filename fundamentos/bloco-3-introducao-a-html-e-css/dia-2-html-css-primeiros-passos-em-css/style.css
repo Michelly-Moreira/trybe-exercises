@@ -1,8 +1,13 @@
-p {
+  body {
+    font-size: 16px;
+    text-align: center;
+  }
+  p {
     font-weight: 600;
     font-size: 3em;
     font-style: italic;
   }
+
   h1 {
     font-family: sans-serif;
     font-size: 65px;
@@ -15,19 +20,18 @@ p {
     line-height: 40px;
   }
 
-  .yellow{
+  .yellow {
     background-color: yellow;
   }
-  .red{
+
+  .red {
     background-color: red;
   }
-  .brown{
+
+  .brown {
     background-color: brown;
   }
+
   .article {
     background-color: blanchedalmond;
-  }
-  body {
-    font-size: 16px;
-    text-align: center;
   }
