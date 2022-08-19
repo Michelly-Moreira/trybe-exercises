@@ -1,5 +1,5 @@
 1
-const a = 13;
+/*const a = 13;
 const b = 13;
 
 let adicao = a+b;
@@ -51,16 +51,22 @@ else{
 }
 
 4.
-let dado = 5
-let return;
+let dado = 5;
 
-if(5>0){
-    console.log(return = "positive")
+
+if(dado>0){
+    console.log("the number is positive");
 }
-else if(5<0){
-    console.log(return = "negative")
+else if(dado<0){
+    console.log("the number is negative");
 }
-else{console.log(return = "zero")
+else{console.log("the number is zero");
 }
+*/
+
+5.
+let base = 5;
+let altura = 8;
+let area = 0;
 
 
