@@ -9,7 +9,8 @@ document.getElementsByClassName('title')[0].innerText='Exercício 5.1 - JavaScri
 let p = document.getElementsByTagName('section')[0].style.textTransform = "uppercase"; 
 
 let paragraf = document.getElementsByClassName('center-content');
-    console.log (paragraf.innerText); /* não apareceu o resultado */
+for (let index of paragraf)
+    console.log (index.innerText); /* não apareceu o resultado */
 
 /*
 Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
