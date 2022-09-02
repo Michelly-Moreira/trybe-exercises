@@ -7,4 +7,18 @@ Agora acesse o texto Atenção! a partir de elementoOndeVoceEsta.
 Agora acesse o terceiroFilho a partir de elementoOndeVoceEsta.
 Agora acesse o terceiroFilho a partir de pai. */
 
-document.getElementById('elementoOndeVoceEsta');
+document.querySelector('#elementoOndeVoceEsta');
+
+const addCor = document.querySelector('#elementoOndeVoceEsta').parentElement.style.color = 'green';
+
+document.querySelector('#primeiroFilhoDoFilho').innerText = 'Passa lá!';
+
+document.getElementById('pai').firstElementChild;
+
+document.querySelector('#elementoOndeVoceEsta').previousElementSibling;
+
+document.getElementById('elementoOndeVoceEsta').nextSibling;
+
+document.getElementById('elementoOndeVoceEsta').nextSibling.nextElementSibling;
+
+document.getElementById('pai').lastElementChild.previousElementSibling;
