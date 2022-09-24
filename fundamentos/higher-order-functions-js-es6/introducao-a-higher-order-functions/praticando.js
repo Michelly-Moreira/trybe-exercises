@@ -80,8 +80,34 @@ const newEmployees = (callback, listNames) => {
 
   //EXERCISE 2
 
-  let numerosSorteados = () => Math.floor(Math.random()*5+1);
- //console.log(numerosSorteados());
+  /* let numerosSorteados = () => Math.ceil(Math.random()*5);
+  console.log(numerosSorteados());
   const result = (numerosApostados, callback) => numerosApostados === callback()? "Parabéns você ganhou" : 'Tente novamente';
 
-  console.log(result(2, numerosSorteados));
+  console.log(result(2, numerosSorteados)); */
+
+
+  //EXERCISE 3
+
+const RIGHT_ANSWERS = ['A', 'C', 'B', 'D', 'A', 'A', 'D', 'A', 'D', 'C'];
+const STUDENT_ANSWERS = ['A', 'N.A', 'B', 'D', 'A', 'C', 'N.A', 'A', 'D', 'B'];
+
+const compareAnswers = (rightAnswer, studentAnswer) => { //rightAnswer, studentAnswer -> são callbacks.
+  if (rightAnswer === studentAnswer) {
+    return 1;
+  } if (studentAnswer === 'N.A') {
+    return 0;
+  }
+  return -0.5;
+};
+
+const score = (rightAnswers, studentAnswers, action) => { //rightAnswers, studentAnswers, action -> São outras callbacks
+  let counter = 0;
+  for (let i = 0; i < rightAnswers.length; i += 1) {
+    let punctuation = action(rightAnswers[i], studentAnswers[i])
+    counter += punctuation;
+  }
+  return `Você fez ${counter} pontos!`
+};
+console.log(score(RIGHT_ANSWERS, STUDENT_ANSWERS, compareAnswers)); //As callbacks foram substituídas pelos arrays e pela função.
+ 
