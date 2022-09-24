@@ -62,5 +62,5 @@ const books = [
 ];
 
 function authorBornIn1947() {
-  books.birthYear.find
+ 
 }
