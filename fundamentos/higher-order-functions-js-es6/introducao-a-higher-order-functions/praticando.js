@@ -78,4 +78,11 @@ const newEmployees = (callback, listNames) => {
 
 
 
-  
+  //EXERCISE 2
+
+  let numerosSorteados = () => Math.floor(Math.random()*5+1);
+    console.log(numerosSorteados());
+ 
+  const result = (numerosApostados, callback) => numerosApostados === callback()? "Parabéns você ganhou" : 'Tente novamente';
+
+  console.log(result(2, numerosSorteados));
