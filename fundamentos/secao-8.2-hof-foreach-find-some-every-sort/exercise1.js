@@ -60,7 +60,13 @@ const books = [
     releaseYear: 1928,
   },
 ];
+//Encontre o nome da primeira pessoa autora do livro nascida no ano de 1947.
 
-function authorBornIn1947() {
- 
+const findAuthorBornIn1947 = (callback) => {
+ for (let i = 0; i < callback.length; i += 1){
+  if(callback[i].author.birthYear === 1947){
+    return callback[i].author.name;
+  }undefined;
 }
+}
+console.log(findAuthorBornIn1947(books));
