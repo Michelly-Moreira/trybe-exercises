@@ -60,13 +60,64 @@ const books = [
     releaseYear: 1928,
   },
 ];
-//Encontre o nome da primeira pessoa autora do livro nascida no ano de 1947.
-
-const findAuthorBornIn1947 = (callback) => {
+//ENCONTRE O NOME da primeira pessoa autora do livro nascida no ano de 1947.
+/* const findAuthorBornIn1947 = (callback) => {
  for (let i = 0; i < callback.length; i += 1){
   if(callback[i].author.birthYear === 1947){
     return callback[i].author.name;
   }undefined;
 }
 }
-console.log(findAuthorBornIn1947(books));
+console.log(findAuthorBornIn1947(books)); */
+
+
+//RETORNE O NOME do livro de menor nome.
+/* function smallerName() {
+  let nameBook;
+  books.forEach((callback) => {
+    if (!nameBook || callback.name.length < nameBook.length) {
+      nameBook = callback.name;
+    }
+  });
+  return nameBook;
+} console.log(smallerName()) */
+ 
+ 
+//ENCONTRE O PRIMEIRO LIVRO cujo nome possui 26 caracteres.
+/* function getNamedBook() {
+return books.find((callback) => 
+  callback.name.length === 26);
+}
+console.log(getNamedBook(books)); */
+
+
+//ORDENE OS LIVROS por data de lançamento em ordem decrescente.
+/* function booksOrderedByReleaseYearDesc() {
+return books.sort((a,b) => b.releaseYear - a.releaseYear);
+}
+console.log(booksOrderedByReleaseYearDesc(books)); */
+
+
+//FAÇA UMA FUNÇÃO QUE RETORNE true, se todas as pessoas autoras nasceram no século XX, ou false, caso contrário.
+/* function everyoneWasBornOnSecXX() {
+  return books.every((callback) => callback.author.birthYear >= 1901 && callback.author.birthYear <= 2000);
+}
+console.log(everyoneWasBornOnSecXX(books)); */
+
+
+//Faça uma função que retorne true, se ALGUM LIVRO FOI LANÇADO NA DÉCADA DE 80, e false, caso contrário.
+/*function someBookWasReleaseOnThe80s() {
+  return books.some((callback) => callback.releaseYear > 1979 && callback.releaseYear < 1990);
+}
+console.log(someBookWasReleaseOnThe80s(books));*/
+
+
+
+//Faça uma função que retorne true, caso NENHUM AUTOR TENHA NASCIDO NO MESMO ANO, e false, caso contrário.
+/* function authorUnique() {
+  return books.every((callback) => 
+  books.some((callbackSome) => callback.author.birthYear === callbackSome.author.birthYear && callback.author.name !== callbackSome.author.name));
+}
+console.log(authorUnique(books));
+
+Obs: Como estamos iterando duas vezes sobre o mesmo array, acaba acontecendo que comparamos o mesmo índice do array. Outra coisa que pode acontecer também é termos o mesmo autor para dois livros diferentes. Vamos então criar uma regra para que o nome do autor não possa ser igual nas comparações.*/
