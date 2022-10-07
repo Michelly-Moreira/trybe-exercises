@@ -260,7 +260,7 @@ const getUser = ( callback ) => {
       nationality: 'Russo',
     };
 
-    // Dica: use esse `console.log()` abaixo para imprimir o resultado na tela.
+    // Dica: use esse `console.log()` abaixo para imprimir o resultado na tela.OK
     console.log(callback(user));
   }, delay());
 };
@@ -281,7 +281,7 @@ const printErrorMessage = (error) => console.log(`Erro ao selecionar país: ${er
 
 const getCountry = (onSuccess, onError ) => {
   setTimeout(() => {
-    const didOperationSucceed = Math.random() >= 0.5;
+    const didOperationSucceed = Math.random() >= 0.5; // algumas vezes esse numero será negativo, me trazendo o erro.
     if (didOperationSucceed) {
       const country = {
         name: 'Brasil',
@@ -304,6 +304,6 @@ getCountry(countryName, printErrorMessage);
 // Deve imprimir:
 //  - Em caso de sucesso: "A moeda corrente do Brasil é Real"
 //  - Em caso de erro: "Erro ao selecionar país: País não encontrado"
-getCountry(countryCurrency, printErrorMessage);
+// getCountry(countryCurrency, printErrorMessage);
 
 
