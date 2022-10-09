@@ -155,27 +155,36 @@ sendMarsTemperature(greet); // Imprime "Olá! Curiosity aqui. Nesse momento são
 
 
 
-FALTA FAZER DAQUI PRA BAIXO
  /* Por fim, o robô Curiosity tem uma taxa de sucesso de envio de mensagem de 60% devido ao fato de o robô já estar muito ocupado com outras operações. Logo, adicione na função sendMarsTemperature uma outra callback que contenha as ações a serem tomadas em caso de falha.
-const messageDelay = () => Math.floor(Math.random() * 5000);
+const messageDelay = () => Math.floor(Math.random() * 5000); //Em até 5segundos aparece a mensagem
 
-const getMarsTemperature = () => {
+const getMarsTemperature = () => { //temperatura atual
   const maxTemperature = 58;
   return Math.floor(Math.random() * maxTemperature);
 }
 
-const toFahrenheit = (degreeCelsius) => (degreeCelsius * (9 / 5)) + 32;
+const toFahrenheit = (degreeCelsius) => (degreeCelsius * (9 / 5)) + 32; //temperatura convertida em fahrenheit
 
 const temperatureInFahrenheit = (temperature) =>
-  console.log(`It is currently ${toFahrenheit(temperature)}ºF at Mars`);
+  console.log(`It is currently ${toFahrenheit(temperature)}ºF at Mars`); //mensagem usando o valor da função toFahrenheit
 
 const greet = (temperature) =>
-  console.log(`Hi there! Curiosity here. Right now is ${temperature}ºC at Mars`);
+  console.log(`Hi there! Curiosity here. Right now is ${temperature}ºC at Mars`); //msg usando a temperatura em celsius
 
 const handleError = (errorReason) =>
-  console.log(`Error getting temperature: ${errorReason}`);
+  console.log(`Error getting temperature: ${errorReason}`); //msgm de erro, o valor do erro declarado em onError, abaixo
 
-// definição da função sendMarsTemperature...
+const sendMarsTemperature = (onSucess, onError) => {
+const inputTemperature = getMarsTemperature();
+const txSucessSend = Math.random() <= 0.6;
+setTimeout(() => {
+  if(txSucessSend){
+    onSucess(inputTemperature)
+  }else{
+    onError('Robot is busy');
+  }
+},messageDelay())
+  }
 
 // imprime "It is currently 47ºF at Mars", por exemplo, ou "Error getting temperature: Robot is busy"
 sendMarsTemperature(temperatureInFahrenheit, handleError);
@@ -185,19 +194,30 @@ sendMarsTemperature(greet, handleError); */
 
 
 
-/* A função uppercase recebe um parâmetro str e uma callback. Esta função transforma as letras de uma palavra em letras maiúsculas. Escreva um teste que verifique a chamada da função uppercase. Lembre-se de ter cuidado com os falso-positivos em testes assíncronos.
-
+/* A função uppercase recebe um parâmetro str e uma callback. Esta função transforma as letras de uma palavra em letras maiúsculas. Escreva um teste que verifique a chamada da função uppercase. Lembre-se de ter cuidado com os falso-positivos em testes assíncronos. */
+/* 
 const uppercase = (str, callback) => {
   setTimeout(() => {
     callback(str.toUpperCase());
   }, 500);
-}; */
+}; 
 
+it('Testa se uppercase "test" to equal "TEST"', (done) => { // 1. Cria it com a função done 
+  uppercase('test', (strUpperCase) => { // 2. Chama a função `uppercase`
+    try { // 3. Adiciona o `try/catch`
+      expect(strUpperCase).toBe('TEST'); // 4. Criam o expect
+      done(); //A estrutura de teste precisa saber quando a operação assíncrona é concluída para que possa verificar se o teste foi aprovado. Então, chamamos a done() pra informar quando a função assíncrona termina.
+    } catch (error) {
+      done(error); // 5. Chamamos a função `done` com o parâmetro `error` para caso o resultado seja diferente de 'TEST'
+    }
+  });
+}); */
+ 
 
 
 /* Complete a função handlePokemonSearch de modo que:
 Ao chamar a função getPokemonDetails com um pokémon existente, imprime no console a mensagem com os detalhes deste pokémon.
-Ao chamar a função getPokemonDetails com um pokémon não existente, imprime no console o erro.
+Ao chamar a função getPokemonDetails com um pokémon não existente, imprime no console o erro.*/
 const pokemons = [
   {
     name: 'Bulbasaur',
@@ -233,10 +253,14 @@ function getPokemonDetails(selectedPokemon, callback) {
 }
 
 const handlePokemonSearch = (error, message) => {
-  // Implemente a callback de tratamento de erro
+ if(error) {
+  console.log(error);
+}else{
+  console.log(message);
+}
 };
 
-getPokemonDetails( selectedPokemon, handlePokemonSearch); */
+getPokemonDetails( 'Bulbasaur', handlePokemonSearch); 
 
 
 
@@ -255,11 +279,11 @@ describe('A função getPokemonDetails', () => {
   it('retorna um pokémon que existe no banco de dados', () => {
     // Escreva aqui seu código
   });
-}); */
+}); 
+*/
 
 
-
-/* Adivinhar a saída dos console.log dos testes abaixo sem executá-los, vendo se compreendeu bem o funcionamento do beforeEach e do afterEach.
+/* Adivinhar a saída dos console.log dos testes abaixo sem executá-los, vendo se compreendeu bem o funcionamento do beforeEach e do afterEach. 
 
 beforeEach(() => console.log('1 - beforeEach'));
 afterEach(() => console.log('1 - afterEach'));
@@ -271,4 +295,5 @@ describe('Scoped / Nested block', () => {
   afterEach(() => console.log('2 - afterEach'));
 
   test('', () => console.log('2 - test'));
-}); */
+});
+ordem: beforeEach da linha 288, test linha 291, afterEach linha 289, beforeEach da linha 288, describe(before, test e after) e afterEach da linha 289.*/
