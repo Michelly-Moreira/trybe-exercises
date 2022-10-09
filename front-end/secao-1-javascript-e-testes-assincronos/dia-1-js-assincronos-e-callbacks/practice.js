@@ -217,7 +217,7 @@ it('Testa se uppercase "test" to equal "TEST"', (done) => { // 1. Cria it com a 
 
 /* Complete a função handlePokemonSearch de modo que:
 Ao chamar a função getPokemonDetails com um pokémon existente, imprime no console a mensagem com os detalhes deste pokémon.
-Ao chamar a função getPokemonDetails com um pokémon não existente, imprime no console o erro.*/
+Ao chamar a função getPokemonDetails com um pokémon não existente, imprime no console o erro.
 const pokemons = [
   {
     name: 'Bulbasaur',
@@ -260,10 +260,10 @@ const handlePokemonSearch = (error, message) => {
 }
 };
 
-getPokemonDetails( 'Bulbasaur', handlePokemonSearch); 
+getPokemonDetails( 'Bulbasaur', handlePokemonSearch); */
 
 
-
+// FALTA ESTE EXERCICIO
 /* Escreva testes para o sistema que distribui esses Pokémon. Para isso, você deve criar um novo arquivo .test.js ou .spec.js e copiar o código abaixo. Lembre-se de completar os testes para a função getPokemonDetails de acordo com as especificações.
 
 OBS: Lembre-se de exportar o arquivo do exercício 08 para que possamos utilizá-lo em nossos testes.
