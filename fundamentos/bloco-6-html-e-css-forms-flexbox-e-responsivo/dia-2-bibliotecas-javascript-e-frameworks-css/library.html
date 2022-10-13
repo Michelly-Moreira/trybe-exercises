@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="ṽiewport" content="width=device-width, initial-scale=1"/>
+  <title>form viagem</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+</head>
+<body>
+  <header class="container text-center">
+    <h1 class="display-2">Formulário</h1>
+
+      <hr>
+
+        <label for="input-user" class="form-label">Nome Completo:</label><input type="text" class="form-control" id="input-user" name="user" minlength="10" maxlength="40"/>
+
+      <br>
+      
+      <label for="input-email" class="form-label">E-mail:</label><input type="email" class="form-control" id="input-email" name="email" minlength="10" maxlength="50"/>
+  </header>
+  
+  <main class="container">
+    <form action="" method="post">
+      <p class="lead" >Destino Preferido:</p>
+      <div class="form-check">
+        <label for="check-option-1" class="form-check-label"></label><input type="radio" class="form-check-input" id="check-option-1" name="option">Cidade
+      </div>
+      <div class="form-check">
+        <label for="check-option-2" class="form-check-label"></label><input type="radio" class="form-check-input" id="check-option-2" name="option">Campo
+      </div>
+      <div class="form-check">
+        <label for="check-option-3" class="form-check-label"></label><input type="radio" class="form-check-input" id="check-option-3" name="option">Praia
+      </div>
+      <div class="form-check">
+        <label for="check-option-4" class="form-check-label"></label><input type="radio" class="form-check-input" id="check-option-4" name="option">Montanhas
+      </div>
+      
+      <br>
+      
+      <p>Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</p>
+      <label for="input-resposta" class="form-label"></label><textarea id="input-resposta" class="form-control" name="dissertação" cols="40" rows="10" maxlength="500"></textarea>
+      
+      <br>
+
+      <div class="container">
+      <p class="lead">Qual a melhor data para realizar sua viagem?</p>
+      <label for="datepicker">Data:</label>
+      <input type="text" id="datepicker" name="date"/>
+    </div>
+
+      <br>
+      
+      <div class="form-check container">
+      <label for="acordo" class="form-check-label"><input type="checkbox" class="form-check-input" id="acordo" name="concordo"/>Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?</label>
+
+        <br>
+        
+      <Label for="acordo-2" class="form-check-label"><input type="checkbox" class="form-check-input" id="acordo-2" name="concordo">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.</Label>
+    </div>
+      
+      <br>
+      
+      <div class="container">
+        <button type="reset" class="btn btn-secondary" name="apagado">Apagar</button>
+        <button type="submit" class="btn btn-primary" name="enviado" id="button1">Enviar</button>
+      </div>
+      
+      <br>
+      
+      <p class="form-text">Formato do formulário TrybeTrip</p>
+    </main>
+  </form>
+  <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+  <script src="pikaday.js"></script>
+<script>
+    var picker = new Pikaday({ field: document.getElementById('datepicker') });
+</script>
+</body>
